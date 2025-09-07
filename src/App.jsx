@@ -20,6 +20,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Salesmen from "./pages/Salesmen";
+import AddProduct from "./pages/AddProduct";
+import Reports from "./pages/Reports";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
+
+
 
 
   function App() {
@@ -27,11 +33,15 @@ import Salesmen from "./pages/Salesmen";
     <Router>
       <Navbar />  {/* top */}
       <Routes>
-         <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/products" element={<Products />} />  {/*route me render kya hn data */}
+        <Route path="/add-product" element={<AddProduct />} />
        <Route path="/Salesmen" element={<Salesmen/>} />
+       <Route path="/reports" element={<Reports/>} />
+
 
         <Route path="/login" element={<Login />} />
 

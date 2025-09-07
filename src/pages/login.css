@@ -1,0 +1,77 @@
+body {
+  background-color: #f0f2f5;
+  font-family: Arial, sans-serif;
+}
+
+.login-container {
+  width: 500px;
+  margin: 80px auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Each form row spacing */
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px; /* increase this for more space between inputs */
+}
+
+.form-row label {
+  width: 100px;
+  font-weight: bold;
+  color: #555;
+}
+
+.input-with-icon {
+  position: relative;
+  flex: 1;
+}
+
+.input-with-icon .icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #888;
+}
+
+.input-with-icon input {
+  width: 100%;
+  padding: 10px 10px 10px 35px; /* left padding for icon */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.input-with-icon input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0,123,255,0.5);
+  outline: none;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px; /* space above button */
+  transition: 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #0056b3;
+}
