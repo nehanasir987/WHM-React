@@ -1,0 +1,73 @@
+.container {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.topControls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.search {
+  flex: 1;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  min-width: 200px;
+}
+
+.sortButtons button {
+  margin-right: 10px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  background: #4caf50;
+  color: #fff;
+  cursor: pointer;
+}
+
+.sortButtons button:hover {
+  background: #45a049;
+}
+
+.addBtn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #2196f3;
+  color: #fff;
+  cursor: pointer;
+}
+
+.addBtn:hover {
+  background: #1976d2;
+}
+
+.productsGrid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Responsive */
+@media (min-width: 1200px) {
+  .productsGrid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .productsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
