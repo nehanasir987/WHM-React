@@ -12,12 +12,14 @@ import './App.css'
 import Salesmen from "./pages/Salesmen";
 import AddProduct from "./pages/AddProduct";
 import Reports from "./pages/Reports";
+import Footer from "./components/Footer";
+
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
   return (
     <Router>
-      <Navbar />  
+      <Navbar />
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home />} />

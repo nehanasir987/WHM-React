@@ -10,23 +10,24 @@ function Products() {
   const [search, setSearch] = useState("");
   const [sortField, setSortField] = useState("");
 
-  // Load products from localStorage
+  // ✅ Load products from localStorage
   useEffect(() => {
     const stored = JSON.parse(localStorage.getItem("products")) || [];
     setProducts(stored);
   }, []);
 
-  // Save products to localStorage
+  // ✅ Save products to localStorage whenever products change
   useEffect(() => {
     localStorage.setItem("products", JSON.stringify(products));
   }, [products]);
 
   const addProduct = (newProduct) => {
-    const productWithId = { id: products.length + 1, ...newProduct };
+    const productWithId = { id: Date.now(), ...newProduct }; // unique id
     setProducts([productWithId, ...products]);
     setShowForm(false);
   };
 
+  // ✅ Filter + Sort
   const filteredProducts = products
     .filter((p) => p.name.toLowerCase().includes(search.toLowerCase()))
     .sort((a, b) => {
@@ -39,9 +40,8 @@ function Products() {
     <div className={styles.container}>
       <h1>Products Inventory</h1>
 
-      {/* Top Controls: Search, Sort, Add */}
+      {/* Top Controls */}
       <div className={styles.topControls}>
-        {/* Replace input with SearchBar component */}
         <SearchBar
           placeholder="Search product..."
           value={search}
@@ -60,7 +60,10 @@ function Products() {
 
       {/* Product Form Modal */}
       {showForm && (
-        <ProductForm onAddProduct={addProduct} onClose={() => setShowForm(false)} />
+        <ProductForm
+          onAddProduct={addProduct}
+          onClose={() => setShowForm(false)}
+        />
       )}
 
       {/* Products Grid */}

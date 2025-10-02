@@ -22,7 +22,14 @@ function ProductForm({ onAddProduct, onClose }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onAddProduct(formData);
-    setFormData({ name: "", description: "", category: "", stock: "", price: "", image: "" });
+    setFormData({
+      name: "",
+      description: "",
+      category: "",
+      stock: "",
+      price: "",
+      image: "",
+    });
     onClose(); // form close
   };
 

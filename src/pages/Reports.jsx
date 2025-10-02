@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Bar, Pie } from "react-chartjs-2";
+import Footer from "../components/Footer";
+
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, ArcElement, Tooltip, Legend } from "chart.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -19,6 +21,7 @@ function Reports() {
 
 
   return (
+    <>
     <div className="container mt-5">
       <h2 className="mb-4">Reports Dashboard</h2>
 
@@ -44,6 +47,9 @@ function Reports() {
 
     
     </div>
+              <Footer/>
+
+    </>
   );
 }
 

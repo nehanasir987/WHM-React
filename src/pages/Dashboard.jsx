@@ -1,140 +1,100 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import { MdOutlineMenu } from "react-icons/md";
+
+import Sidebar from "../components/Sidebar";
+import LiveClock from "../components/LiveClock";
+import DashboardBox from "../components/DashboardBox";
+import "./Dashboard.css";
+import { FaUsers, FaBoxOpen, FaShoppingCart, FaChartLine } from "react-icons/fa";
+
 
 const Dashboard = () => {
-  let date = new Date();
-   
-  let total_product = 255;
-   let Total_Stock = 55;
-    let Low_Stock_items = 89;
-
   return (
-    <React.Fragment>
-      <br />
-      <br />
-   
-      <p>
-        The Current Date is {date.toLocaleDateString()}
-        <br />
-        The Current Time is {date.toLocaleTimeString()}
-      </p>
-
-      <h1>Ware-House-Stock</h1>
-
-      <div className="dashboard-card container mt-4">
-
-        <div className="row">
-          {/* Column 1 */}
-          <div className="col-md-4">
-            <div className="card">
+    <div className="dashboard-page">
+      {/* ================= HEADER ================= */}
+      <header className="dashboard-header">
+        <Container>
+          <div className="header-inner d-flex align-items-center justify-between">
+            {/* Left side Logo */}
+            <Link to="/" className="d-flex align-items-center">
               <img
-                src="https://plus.unsplash.com/premium_photo-1663091967607-2e15b89f4d6e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8d2FyZWhvdXNlfGVufDB8fDB8fHww"
-                className="card-img-top"
-                alt="Card 1"
+                src="https://gaqm.org/uploads/cert_logos/logo_5347.png"
+                alt="Warehouse Logo"
+                className="logo"
               />
-              <div className="card-body">
-                <h5 className="card-title">Product-1</h5>
-                <h6 className="card-text">
-                  Total Product: {total_product}
-                  <br />
-                  Total Stock: {Total_Stock}
-                  <br />
-                  Low Stock items: {Low_Stock_items}
-                </h6>
-                <a href="#" className="btn btn-primary">
-                  Go somewhere
-                </a>
-              </div>
-            </div>
+              <span className="logo-text">WHM</span>
+            </Link>
+
+            {/* Right side Menu button */}
+            <Button className="menu-btn">
+              <MdOutlineMenu size={24} />
+            </Button>
+          </div>
+        </Container>
+      </header>
+
+      {/* ================= MAIN AREA ================= */}
+      <div className="main d-flex">
+        {/* Sidebar */}
+        <div className="sidebarWrapper">
+          <Sidebar />
+        </div>
+
+        {/* ================= CONTENT ================= */}
+        <div className="content">
+          <h1>Warehouse Management System</h1>
+          <p>
+            Welcome to the WHM Dashboard. This system helps you efficiently manage 
+            warehouse operations like inventory tracking, orders, statistics and 
+            reports in one place. Navigate through the sidebar to explore different 
+            sections.
+          </p>
+
+          {/* Live Clock */}
+          <div className="dashboard-clock">
+            <h3>Current Time:</h3>
+            <LiveClock />
           </div>
 
-          {/* Column 2 */}
-          <div className="col-md-4">
-            <div className="card">
-              <img
-                src="https://images.unsplash.com/photo-1569062980724-23e1063d8790?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2FyZWhvdXNlJTIwcHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D"
-                className="card-img-top"
-                alt="Card 2"
-              />
-              <div className="card-body">
-                <h5 className="card-title">Product-2</h5>
-                <h6 className="card-text">
-                Total Product: {total_product}
-                <br />
-                Total Stock: {Total_Stock}
-                <br />
-                Low Stock items: {Low_Stock_items}
+          {/* Dashboard Boxes */}
+        <div className="right-content w-100">
+  <div className="dashboardBoxWrapper">
+    <DashboardBox 
+      title="Total Users" 
+      value="277" 
+      icon={FaUsers} 
+      color={["#ff7e5f", "#feb47b"]} 
+    />
 
-                </h6>
-                <a href="#" className="btn btn-primary">
-                  Go somewhere
-                </a>
-              </div>
-            </div>
-          </div>
+    <DashboardBox 
+      title="Total Orders" 
+      value="152" 
+      icon={FaShoppingCart} 
+      color={["#6a11cb", "#2575fc"]} 
+    />
 
-          {/* Column 3 */}
-          <div className="col-md-4">
-            <div className="card">
-            <img
-                src="https://images.unsplash.com/photo-1724709162875-fe100dd0e04b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHdhcmVob3VzZSUyMHByb2R1Y3R8ZW58MHx8MHx8fDA%3D"
-                className="card-img-top"
-                alt="Card 3"
-              />
-              <div className="card-body">
-                <h5 className="card-title">Product-3</h5>
-                <h6 className="card-text">
-                  Total Product: {total_product}
-                  <br />
-                  Total Stock: {Total_Stock}
-                  <br />
-                  Low Stock items: {Low_Stock_items}
-                </h6>
-                <a href="#" className="btn btn-primary">
-                  Go somewhere
-                </a>
-              </div>
-            </div>
-          </div>
+    <DashboardBox 
+      title="Stock Items" 
+      value="1,230" 
+      icon={FaBoxOpen} 
+      color={["#11998e", "#38ef7d"]} 
+    />
+
+    <DashboardBox 
+      title="Monthly Sales" 
+      value="$12,540" 
+      icon={FaChartLine} 
+      color={["#fc4a1a", "#f7b733"]} 
+    />
+  </div>
+</div>
         </div>
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 
 export default Dashboard;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/* React me jab hum multiple elements return karte hain ek component se, to ek parent element zaroori hota hai.
-  return (
-  <h1>Hello</h1>
-  <p>World</p>
-); ===========Error
-Hum usually sab ko ek <div> ke andar wrap kar dete hain: jis sy DOM  me div add ho jata hn unnecessary hota hn......
-
-<React.Fragment> ya shorthand <>...</> use karke hum multiple elements group kar sakte hain without extra DOM node:
-
-it is used to return a multiple jsx element without extra DOM Wrapper*/}

@@ -1,23 +1,4 @@
-.custom-banner {
-  width: 100%;          /* Full width of screen */
-  height: 80vh;         /* Full viewport height */
-  margin: 0;
-  padding: 0;
-  overflow: hidden;     /* optional, hides anything overflowing */
-}
-
-.custom-banner img {
-  width: 100%;          /* Fill the container */
-  height: 100%;         /* Fill banner height */
-  object-fit: cover;    /* Cover container without stretching */
-}
-
-.custom-banner-heading {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 3rem;
-  text-align: center;
+/* This pushes the content below the fixed navbar */
+.home-container {
+  padding-top: 80px; /* same as navbar height */
 }

@@ -1,30 +1,142 @@
-.dashboard-card {
-  background-color: #1E293B; /* Dark blue */
-  color: #fff;
-  padding: 30px 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.dashboard-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+body {
+  font-family: "Open Sans", sans-serif;
+  background: #ebe9e9;
 }
 
-.card-img{
-  width: 50%;
-  margin-top: 30px;
-  left: 0;
-
+/* Header */
+.dashboard-header {
+  width: 100%;
+  height: 80px;
+  background: #f8f9fa;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  z-index: 100;
 }
-.card-number {
-  font-size: 2rem;
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  width: 70px;
+  height: auto;
+  margin-right: 8px;
+  display: block;
+}
+
+.logo-text {
+  color: blue;
+  text-shadow: 2px 2px 5px black;
   font-weight: bold;
+  font-size: 20px;
+}
+
+/* Main layout */
+.main {
+  display: flex;
+  height: calc(100vh - 80px); /* header ki height minus */
+}
+
+.sidebarWrapper {
+  width: 250px;
+  background: #1a1818;
+  border-right: 1px solid #df1414;
+  padding: 20px;
+  height: 500%;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  background: #f5f5f5; /*  Main content Dashboard area*/
+  height: 500%;
+}
+
+
+/* Content Heading */
+.content h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #2a2a2a;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-left: 5px solid #2a5298;
+  padding-left: 10px;
+}
+
+/* Description Paragraph */
+.content p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 25px;
+  max-width: 800px;
+}
+
+/* Dashboard Clock Container */
+.dashboard-clock {
+  margin-top: 25px;
+  padding: 20px;
+  background: linear-gradient(135deg, #ffffff, #f4f6fa);
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+/* Clock Heading */
+.dashboard-clock h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2a5298;
+}
+
+/* Clock Time Styling */
+.dashboard-clock div {
+  font-size: 20px;
+  font-weight: bold;
+  color: #222;
+  background: #eaf1ff;
+  padding: 8px 15px;
+  border-radius: 8px;
+  box-shadow: inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+
+.dashboardBoxWrapper {
+  display: flex;
+  flex-wrap: wrap;   /* allow wrap for next row */
+  gap: 15px;         /* space between boxes */
+  width: 80%;
+}
+
+.dashboardBoxWrapper .dashboardBox {
+  flex: 1 1 calc(50% - 15px); /* 2 boxes per row */
+  height: 200px;
+  background-color: #ccc;
+  border-radius: 10px;
   margin-top: 10px;
 }
 
-.date-time {
-  font-size: 1.5rem;
-  margin-bottom: 50px;
+
+.dashboardBox:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
 }

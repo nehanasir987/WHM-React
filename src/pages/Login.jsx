@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./login.css";
+import Footer from "../components/Footer";
+
 import '@fortawesome/fontawesome-free/css/all.min.css'; // Font Awesome
 
 function Login() {
@@ -27,6 +29,7 @@ function Login() {
   };
 
   return (
+    <>
     <div className="login-wrapper">
       <div className="login-container">
         <div className="login-header">
@@ -112,6 +115,8 @@ function Login() {
         </div>
       </div>
     </div>
+              <Footer/>
+</>
   );
 }
 
